@@ -1,4 +1,4 @@
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 
 import Navbar from "../navbar/Navbar";
@@ -6,6 +6,7 @@ import BookForm from "../content/BookForm";
 import Book from "../content/Book";
 
 export default function Shelf() {
+    //UseEffect to fetch all books from db
     //
     return (
         <>
