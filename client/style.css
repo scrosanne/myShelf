@@ -13,6 +13,7 @@ body {
     width: 100%;
     padding: 20px;
     display: flex;
+    justify-content: space-between;
 
     background-color: white;
     border: 1px solid black;
@@ -25,16 +26,29 @@ body {
 
     letter-spacing: 0.33em;
     text-align: left;
-    margin-left: 2%;
+    margin-left: 3%;
+}
+
+.search {
+    margin-right: 3%;
+}
+
+.shelf {
+    margin: 2%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
 .book {
     width: 196px;
     height: 286px;
     display: flex;
+    margin: 2%;
+    padding: 1%;
 
     justify-content: center;
-    flex-direction: column;
+    flex-flow: column wrap;
     gap: 10%;
 
     text-align: center;
@@ -51,6 +65,7 @@ body {
     width: 196px;
     height: 286px;
     display: flex;
+    margin: 2%;
 
     justify-content: center;
     flex-direction: column;
@@ -65,7 +80,7 @@ button {
     background: rgba(250, 255, 0, 0.65);
     border: 1px solid rgba(250, 255, 0, 0.65);
 
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: center;
     font-style: italic;
     font-weight: 600;
@@ -74,6 +89,7 @@ button {
 
 .book-form button {
     font-size: 0.8em;
+    cursor: pointer;
 }
 
 input:active {
@@ -82,10 +98,4 @@ input:active {
 
 input:focus {
     outline: none;
-}
-
-.shelf {
-    margin: 2%;
-    display: flex;
-    gap: 2%;
 }

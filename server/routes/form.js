@@ -4,8 +4,9 @@ const router = express.Router();
 const { addBook, getBooks } = require("../db");
 
 // / / / / / / / / GET ALL BOOKS / / / / / / / /
-router.get("/books/all", (req, res) => {
+router.get("/books", (req, res) => {
     getBooks().then((books) => {
+        console.log(books);
         res.json(books);
     });
 });

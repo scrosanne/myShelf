@@ -23,7 +23,7 @@ function addBook(author, title) {
 }
 
 function getBooks() {
-    return db.query("SELECT * FROM books").then((result) => result.rows);
+    return db.query("SELECT * FROM books ORDER BY created_at DESC").then((result) => result.rows);
 }
 
 module.exports = {
