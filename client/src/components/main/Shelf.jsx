@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import Navbar from "../navbar/Navbar";
 import BookForm from "../content/BookForm";
-// import Book from "../content/Book";
+import Book from "../content/Book";
 
 export default function Shelf() {
     const [books, setBooks] = useState([]);
@@ -38,34 +38,14 @@ export default function Shelf() {
 
     return (
         <>
-            {/* n a v i g a t i o n   b a r */}
-            <div className="navbar">
-                <h1>myShelf</h1>
-                <div className="search">
-                    <input
-                        onChange={(e) => setQuery(e.currentTarget.value)}
-                        type="text"
-                        name="query"
-                        id=""
-                        placeholder="search for author"
-                    />
-                </div>
-            </div>
+            <Navbar setQuery={setQuery} />
 
-            {/* i t e r a t e   o v e r   b o o k s */}
-            {/* <Navbar getSearchQuery={getSearchQuery} /> */}
             <div className="shelf">
                 <BookForm />
+
                 {filteredBooks.map((book) => {
                     return (
-                        <div
-                            key={book.id}
-                            className="book"
-                            onClick={(e) => openBook(e, book.id)}
-                        >
-                            <h2>{book.author}</h2>
-                            <h4>{book.title}</h4>
-                        </div>
+                        <Book key={book.id} book={book} openBook={openBook} />
                     );
                 })}
             </div>

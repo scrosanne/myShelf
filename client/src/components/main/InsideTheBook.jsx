@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 
 // import PostForm from "../content/BookForm";
+import Navbar from "../navbar/Navbar";
 
 export default function Shelf() {
     const [posts, setPosts] = useState([]);
-    // const [query, setQuery] = useState("");
+    const [query, setQuery] = useState("");
 
     const { id } = useParams(); //get id from url
 
@@ -25,18 +26,7 @@ export default function Shelf() {
 
     return (
         <>
-            {/* <div className="navbar">
-                <h1>myShelf</h1>
-                <div className="search">
-                    <input
-                        onChange={(e) => setQuery(e.currentTarget.value)}
-                        type="text"
-                        name="query"
-                        id=""
-                        placeholder="search for author"
-                    />
-                </div>
-            </div> */}
+            <Navbar setQuery={setQuery} />
 
             {/* <div className="shelf">
                 <PostForm />
