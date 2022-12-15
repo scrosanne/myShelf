@@ -59,6 +59,7 @@ body {
     background-color: white;
     border: 1px solid #494949;
     box-shadow: 11px 9px 0px 0px #8d8c8c80;
+    cursor: pointer;
 }
 
 .book-form {
@@ -71,14 +72,14 @@ body {
     flex-direction: column;
     gap: 10%;
 
-    background: rgba(250, 255, 0, 0.65);
+    background: rgb(253, 255, 132);
     border: 2px dashed #494949;
 }
 
 .book-form input,
 button {
-    background: rgba(250, 255, 0, 0.65);
-    border: 1px solid rgba(250, 255, 0, 0.65);
+    background: rgb(253, 255, 132);
+    border: 1px solid rgb(253, 255, 132);
 
     font-size: 1em;
     text-align: center;
