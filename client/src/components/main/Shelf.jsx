@@ -6,16 +6,33 @@ import BookForm from "../content/BookForm";
 import Book from "../content/Book";
 
 export default function Shelf() {
-    //UseEffect to fetch all books from db
-    //
+    const [books, setBooks] = useState([]); //search query
+
+    useEffect(() => {
+        fetch("/books/all")
+            .then((res) => res.json())
+            .then((books) => {
+                if (books) {
+                    setBooks([...books]);
+                } else {
+                    //"success false"
+                }
+            });
+    }, []);
+
     return (
         <>
             <Navbar />
             <div className="shelf">
                 <BookForm />
-                <Book />
-                {/* flex container containing BookForm and Books 
-            width and height set, depending on viewport */}
+                {books.map((book) => {
+                    return (
+                        <div key={book.id} className="book">
+                            <h2>{book.author}</h2>
+                            <h4>{book.title}</h4>
+                        </div>
+                    );
+                })}
             </div>
         </>
     );

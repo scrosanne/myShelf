@@ -22,6 +22,11 @@ function addBook(author, title) {
         .then((result) => result.rows[0]);
 }
 
+function getBooks() {
+    return db.query("SELECT * FROM books").then((result) => result.rows);
+}
+
 module.exports = {
     addBook,
+    getBooks,
 };

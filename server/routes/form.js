@@ -1,7 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-const { addBook } = require("../db");
+const { addBook, getBooks } = require("../db");
+
+// / / / / / / / / GET ALL BOOKS / / / / / / / /
+router.get("/books/all", (req, res) => {
+    getBooks().then((books) => {
+        res.json(books);
+    });
+});
 
 // / / / / / / / / B O O K  F O R M / / / / / / / /
 router.post("/book", (req, res) => {
