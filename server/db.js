@@ -44,10 +44,15 @@ function addPost(book_id, category, content) {
         .then((result) => result.rows[0]);
 }
 
+function getPostsByBookId(id) {
+    return db.query(`SELECT * FROM posts WHERE book_id = $1`, [id]).then((result) => result.rows);
+}
+
 module.exports = {
     addBook,
     getBooks,
     getBookById,
 
     addPost,
+    getPostsByBookId
 };

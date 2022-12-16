@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import Navbar from "../navbar/Navbar";
 import PostForm from "../content/PostForm";
 import Banner from "../main/Banner";
+import Post from "../content/Post";
 
 export default function InsideTheBook() {
     const [posts, setPosts] = useState([]);
@@ -18,7 +19,7 @@ export default function InsideTheBook() {
             .then((posts) => {
                 if (posts) {
                     console.log("posts", posts);
-                    //setPosts([...posts]);
+                    setPosts([...posts]);
                 } else {
                     //"success false"
                 }
@@ -32,6 +33,10 @@ export default function InsideTheBook() {
             <PostForm id={id} />
 
             <Banner id={id} />
+
+            {posts.map((post) => {
+                return <Post key={post.id} post={post} />;
+            })}
 
             <div className="book">
                 <p>this is a comment</p>

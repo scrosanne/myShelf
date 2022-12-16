@@ -1,13 +1,18 @@
 const express = require("express");
 const router = express.Router();
 
-const { addBook, getBooks, getBookById, addPost } = require("../db");
+const {
+    addBook,
+    getBooks,
+    getBookById,
+    addPost,
+    getPostsByBookId,
+} = require("../db");
 
 // / / / / / / / / G E T  B O O K  B Y  I D / / / / / / / /
 router.get("/book/:id/json", (req, res) => {
     const bookId = req.params.id;
     getBookById(bookId).then((books) => {
-        console.log(books);
         res.json(books);
     });
 });
@@ -15,7 +20,6 @@ router.get("/book/:id/json", (req, res) => {
 // / / / / / / / / G E T  A L L  B O O K S / / / / / / / /
 router.get("/books", (req, res) => {
     getBooks().then((books) => {
-        console.log(books);
         res.json(books);
     });
 });
@@ -23,7 +27,6 @@ router.get("/books", (req, res) => {
 // / / / / / / / / B O O K  F O R M / / / / / / / /
 router.post("/book", (req, res) => {
     const { author, title } = req.body;
-    console.log(req.body);
 
     addBook(author, title)
         .then((book) => {
@@ -45,7 +48,7 @@ router.post("/post", (req, res) => {
 
     addPost(book_id, category, content)
         .then((post) => {
-            console.log(post);
+            //console.log(post);
             //response necessarry, else nothing to fetch!
             if (post) {
                 res.json({ success: true });
@@ -54,6 +57,15 @@ router.post("/post", (req, res) => {
             }
         })
         .catch((err) => console.log(err));
+});
+
+// / / / / / / / / G E T  A L L  P O S T S / / / / / / / /
+router.get("/posts/:id", (req, res) => {
+    const bookId = req.params.id;
+    getPostsByBookId(bookId).then((post) => {
+        console.log(post);
+        res.json(post);
+    });
 });
 
 module.exports = router;
