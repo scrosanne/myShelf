@@ -1,9 +1,18 @@
 const express = require("express");
 const router = express.Router();
 
-const { addBook, getBooks } = require("../db");
+const { addBook, getBooks, getBookById } = require("../db");
 
-// / / / / / / / / GET ALL BOOKS / / / / / / / /
+// / / / / / / / / G E T  B O O K  B Y  I D / / / / / / / /
+router.get("/book/:id/json", (req, res) => {
+    const bookId = req.params.id;
+    getBookById(bookId).then((books) => {
+        console.log(books);
+        res.json(books);
+    });
+});
+
+// / / / / / / / / G E T  A L L  B O O K S / / / / / / / /
 router.get("/books", (req, res) => {
     getBooks().then((books) => {
         console.log(books);
