@@ -7,10 +7,9 @@ export default function Banner({ id }) {
         fetch(`/book/${id}/json`)
             .then((res) => res.json())
             .then((book) => {
-                console.log(book);
                 setBanner({ author: book.author, title: book.title });
             });
-    });
+    }, []);
 
     return (
         <div className="banner">
