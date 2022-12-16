@@ -32,8 +32,22 @@ function getBookById(id) {
         .then((result) => result.rows[0]);
 }
 
+function addPost(book_id, category, content) {
+    return db
+        .query(
+            `INSERT INTO posts (
+                book_id, category, content)
+    VALUES ($1, $2, $3)
+    RETURNING *`,
+            [book_id, category, content]
+        )
+        .then((result) => result.rows[0]);
+}
+
 module.exports = {
     addBook,
     getBooks,
-    getBookById
+    getBookById,
+
+    addPost,
 };

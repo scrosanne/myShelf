@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 
-//import PostForm from "../content/BookForm";
 import Navbar from "../navbar/Navbar";
+import PostForm from "../content/PostForm";
 import Banner from "../main/Banner";
 
-export default function Shelf() {
+export default function InsideTheBook() {
     const [posts, setPosts] = useState([]);
     const [query, setQuery] = useState("");
 
@@ -18,7 +18,7 @@ export default function Shelf() {
             .then((posts) => {
                 if (posts) {
                     console.log("posts", posts);
-                    setPosts([...posts]);
+                    //setPosts([...posts]);
                 } else {
                     //"success false"
                 }
@@ -29,7 +29,7 @@ export default function Shelf() {
         <>
             <Navbar setQuery={setQuery} />
 
-            {/* <PostForm /> */}
+            <PostForm id={id} />
 
             <Banner id={id} />
 

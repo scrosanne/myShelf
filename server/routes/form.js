@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { addBook, getBooks, getBookById } = require("../db");
+const { addBook, getBooks, getBookById, addPost } = require("../db");
 
 // / / / / / / / / G E T  B O O K  B Y  I D / / / / / / / /
 router.get("/book/:id/json", (req, res) => {
@@ -39,5 +39,21 @@ router.post("/book", (req, res) => {
 });
 
 // / / / / / / / / P O S T  F O R M / / / / / / / /
+router.post("/post", (req, res) => {
+    const { category, content } = req.body.input;
+    const book_id = req.body.id;
+
+    addPost(book_id, category, content)
+        .then((post) => {
+            console.log(post);
+            //response necessarry, else nothing to fetch!
+            if (post) {
+                res.json({ success: true });
+            } else {
+                res.json({ success: false });
+            }
+        })
+        .catch((err) => console.log(err));
+});
 
 module.exports = router;

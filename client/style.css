@@ -81,7 +81,7 @@ body {
     box-shadow: 11px 9px 0px 0px #8d8c8c80;
     cursor: pointer;
 }
-
+/* B O O K  F O R M */
 .book-form {
     width: 196px;
     height: 286px;
@@ -113,6 +113,55 @@ button {
     cursor: pointer;
 }
 
+/* P O S T  F O R M */
+.post-form {
+    width: 196px;
+    height: 186px;
+    margin: 2%;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    background: rgb(248, 251, 114);
+    border: 2px dashed #494949;
+}
+
+.post-form .top input {
+    width: 100%;
+    background: rgb(248, 251, 114);
+    border: 1px solid rgb(248, 251, 114);
+
+    /* font-size: 1em; */
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+}
+
+.post-form .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post-form .bottom button {
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.post-form .bottom input {
+    background: rgb(124, 125, 112);
+    border: 1px solid rgb(248, 251, 114);
+
+    font-size: 1em;
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+}
+
+/* I N P U T */
 input:active {
     outline: none;
 }
