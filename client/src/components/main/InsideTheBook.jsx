@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 
-// import PostForm from "../content/BookForm";
+//import PostForm from "../content/BookForm";
 import Navbar from "../navbar/Navbar";
+import Banner from "../main/Banner";
 
 export default function Shelf() {
     const [posts, setPosts] = useState([]);
@@ -12,7 +13,7 @@ export default function Shelf() {
 
     useEffect(() => {
         //get all posts
-        fetch(`/book/${id}`)
+        fetch(`/posts/${id}`)
             .then((res) => res.json())
             .then((posts) => {
                 if (posts) {
@@ -28,19 +29,9 @@ export default function Shelf() {
         <>
             <Navbar setQuery={setQuery} />
 
-            {/* <div className="shelf">
-                <PostForm />
-                {posts.map((post) => {
-                    return (
-                        <div key={post.id} className="post">
-                            <p>{post.content}</p>
-                            <h4>{post.category}</h4>
-                        </div>
-                    );
-                })}
-            </div> */}
+            {/* <PostForm /> */}
 
-            {/* Banner Component */}
+            <Banner id={id} />
 
             <div className="book">
                 <p>this is a comment</p>

@@ -26,7 +26,14 @@ function getBooks() {
     return db.query("SELECT * FROM books ORDER BY created_at DESC").then((result) => result.rows);
 }
 
+function getBookById(id) {
+    return db
+        .query(`SELECT * FROM books WHERE id = $1`, [id])
+        .then((result) => result.rows[0]);
+}
+
 module.exports = {
     addBook,
     getBooks,
+    getBookById
 };
