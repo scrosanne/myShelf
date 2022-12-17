@@ -10,8 +10,8 @@ body {
 }
 
 .navbar {
-    width: 100%;
     padding: 20px;
+
     display: flex;
     justify-content: space-between;
 
@@ -57,27 +57,28 @@ body {
     margin: 2%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
 }
 
 .book {
     width: 196px;
     height: 286px;
-    display: flex;
+
     margin: 2%;
     padding: 1%;
 
+    display: flex;
     justify-content: center;
     flex-flow: column wrap;
-    gap: 10%;
+    gap: 7%;
 
     text-align: center;
     font-style: italic;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.24em;
 
     background-color: white;
     border: 1px solid #494949;
+
     box-shadow: 11px 9px 0px 0px #8d8c8c80;
     cursor: pointer;
 }
@@ -112,19 +113,72 @@ button {
     font-size: 0.8em;
     cursor: pointer;
 }
-
-/* P O S T  F O R M */
-.post-form {
-    width: 196px;
-    height: 186px;
+/* I N S I D E  T H E  B O O K */
+.inside {
     margin: 2%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* P O S T */
+.post {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 2%;
+
+    background: white;
+    border: 2px solid #494949;
+}
+
+.post-top {
+    position: relative;
+    height: 80%;
+    padding: 5%;
+}
+.post-top p {
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-align: left;
+}
+
+.post-bottom {
+    position: relative;
+    height: 20%;
+    bottom: 0;
+    padding: 2%;
+
+    border-top: 1px solid black;
 
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
+}
+
+.post-bottom h4 {
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.33em;
+    text-align: left;
+}
+
+/* P O S T  F O R M */
+.post-form {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 2%;
 
     background: rgb(248, 251, 114);
     border: 2px dashed #494949;
+}
+
+.post-form .top {
+    height: 80%;
+    width: 100%;
+    padding: 5%;
+
+    background: rgb(248, 251, 114);
 }
 
 .post-form .top input {
@@ -132,22 +186,43 @@ button {
     background: rgb(248, 251, 114);
     border: 1px solid rgb(248, 251, 114);
 
-    /* font-size: 1em; */
-    text-align: center;
     font-style: italic;
-    font-weight: 600;
-    letter-spacing: 0.24em;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-align: left;
 }
 
 .post-form .bottom {
+    width: 100%;
+    height: 20%;
+    position: relative;
+    bottom: 0;
+
+    border-top: 1px solid black;
+
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 
 .post-form .bottom button {
-    font-size: 0.8em;
+    position: relative;
     cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.post-form .bottom button:hover {
+    font-weight: 300;
+}
+
+.post-form .bottom select {
+    background: rgb(248, 251, 114);
+    border: 1px solid rgb(248, 251, 114);
+
+    padding: 4%;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.33em;
 }
 
 .post-form .bottom input {
