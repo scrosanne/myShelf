@@ -29,8 +29,37 @@ body {
     margin-left: 3%;
 }
 
+/* S E A R C H  A R E A */
 .search {
     margin-right: 3%;
+    display: flex;
+    justify-content: end;
+}
+
+/* search field for Shelf  */
+.search input {
+    text-align: right;
+    border: 1px solid white;
+    padding: 0.4em;
+    width: 80%;
+    border: 2px solid black;
+
+    font-style: italic;
+    letter-spacing: 0.33em;
+    font-weight: 200;
+}
+
+/* search field for InsideTheBook  */
+select {
+    outline: 0;
+    background-color: white;
+    border: 2px solid black;
+
+    padding: 5% 0 5% 10%;
+
+    font-style: italic;
+    letter-spacing: 0.33em;
+    font-weight: 200;
 }
 
 .banner {
@@ -124,17 +153,23 @@ button {
 .post {
     position: relative;
     width: 200px;
-    height: 200px;
+    height: auto;
     margin: 2%;
 
     background: white;
     border: 2px solid #494949;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
 }
 
 .post-top {
     position: relative;
-    height: 80%;
+    /* height: 80%; */
     padding: 5%;
+
+    overflow: scroll;
 }
 .post-top p {
     font-style: italic;
@@ -145,9 +180,9 @@ button {
 
 .post-bottom {
     position: relative;
-    height: 20%;
+    height: auto;
     bottom: 0;
-    padding: 2%;
+    padding: 2% 0 2% 5%;
 
     border-top: 1px solid black;
 
@@ -162,6 +197,10 @@ button {
     text-align: left;
 }
 
+.post-bottom h4 span {
+    font-weight: 300;
+}
+
 /* P O S T  F O R M */
 .post-form {
     position: relative;
@@ -171,6 +210,10 @@ button {
 
     background: rgb(248, 251, 114);
     border: 2px dashed #494949;
+}
+
+.post-form:hover {
+    border: 2px solid #494949;
 }
 
 .post-form .top {
