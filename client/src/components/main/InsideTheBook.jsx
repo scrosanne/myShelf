@@ -30,16 +30,14 @@ export default function InsideTheBook() {
         <>
             <Navbar setQuery={setQuery} />
 
-            <PostForm id={id} />
-
             <Banner id={id} />
 
-            {posts.map((post) => {
-                return <Post key={post.id} post={post} />;
-            })}
+            <div className="inside">
+                <PostForm id={id} />
 
-            <div className="book">
-                <p>this is a comment</p>
+                {posts.map((post) => {
+                    return <Post key={post.id} post={post} />;
+                })}
             </div>
         </>
     );

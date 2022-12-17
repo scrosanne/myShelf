@@ -1,8 +1,14 @@
 export default function Post({ post }) {
     return (
-        <div className="book">
-            <p>{post.content}</p>
-            <h4>{post.category}</h4>
+        <div className="post">
+            <div className="post-top">
+                <p>{post.content}</p>
+            </div>
+
+            <div className="post-bottom">
+                <h4>{post.category}</h4>
+                <h4>+</h4>
+            </div>
         </div>
     );
 }
