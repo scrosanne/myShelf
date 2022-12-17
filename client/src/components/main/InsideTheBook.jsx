@@ -28,10 +28,13 @@ export default function InsideTheBook() {
 
     const filteredPosts = category
         ? posts.filter((post) => {
+            if(category=="all") {
+                return posts;
+            }
             return post.category == category;
         })
         : posts;
-    // console.log("filteredBooks", filteredBooks);
+
 
     return (
         <>

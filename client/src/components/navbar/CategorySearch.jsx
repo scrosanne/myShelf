@@ -6,8 +6,9 @@ export default function CategorySearch({ setCategory }) {
                 name="category"
                 id="category"
             >
-                <option value="quote">#quote</option>
-                <option value="thoughts">#thoughts</option>
+                <option value="all"># all</option>
+                <option value="quote"># quote</option>
+                <option value="thoughts"># thoughts</option>
             </select>
         </div>
     );
