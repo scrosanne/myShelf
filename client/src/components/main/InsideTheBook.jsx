@@ -8,7 +8,7 @@ import Post from "../content/Post";
 
 export default function InsideTheBook() {
     const [posts, setPosts] = useState([]);
-    const [query, setQuery] = useState("");
+    const [category, setCategory] = useState("");
 
     const { id } = useParams(); //get id from url
 
@@ -26,16 +26,23 @@ export default function InsideTheBook() {
             });
     }, []);
 
+    const filteredPosts = category
+        ? posts.filter((post) => {
+            return post.category == category;
+        })
+        : posts;
+    // console.log("filteredBooks", filteredBooks);
+
     return (
         <>
-            <Navbar setQuery={setQuery} />
+            <Navbar setCategory={setCategory} />
 
             <Banner id={id} />
 
             <div className="inside">
                 <PostForm id={id} />
 
-                {posts.map((post) => {
+                {filteredPosts.map((post) => {
                     return <Post key={post.id} post={post} />;
                 })}
             </div>
