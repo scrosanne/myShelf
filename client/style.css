@@ -145,30 +145,23 @@ button {
 /* I N S I D E  T H E  B O O K */
 .inside {
     margin: 2%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5%;
 }
 
 /* P O S T */
 .post {
-    position: relative;
-    width: 200px;
-    height: auto;
-    margin: 2%;
+    min-width: 180px;
+    height: 230px;
 
     background: white;
     border: 2px solid #494949;
-
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
 }
 
 .post-top {
-    position: relative;
-    /* height: 80%; */
+    height: 85%;
     padding: 5%;
-
     overflow: scroll;
 }
 .post-top p {
@@ -179,9 +172,7 @@ button {
 }
 
 .post-bottom {
-    position: relative;
-    height: auto;
-    bottom: 0;
+    height: 15%;
     padding: 2% 0 2% 5%;
 
     border-top: 1px solid black;
@@ -204,9 +195,8 @@ button {
 /* P O S T  F O R M */
 .post-form {
     position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 2%;
+    min-width: 180px;
+    height: 230px;
 
     background: rgb(248, 251, 114);
     border: 2px dashed #494949;
