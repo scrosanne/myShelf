@@ -48,7 +48,7 @@ router.post("/post", (req, res) => {
 
     addPost(book_id, category, content)
         .then((post) => {
-            //console.log(post);
+            console.log("post server side", post);
             //response necessarry, else nothing to fetch!
             if (post) {
                 res.json({ success: true });

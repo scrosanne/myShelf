@@ -6,8 +6,10 @@ export default function Post({ post }) {
             </div>
 
             <div className="post-bottom">
-                <h4>{post.category}</h4>
-                <h4>+</h4>
+                <h4>
+                    <span>#</span>
+                    {post.category}
+                </h4>
             </div>
         </div>
     );

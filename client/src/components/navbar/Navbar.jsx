@@ -1,6 +1,7 @@
 import Search from "./Search";
 import CategorySearch from "./CategorySearch";
 
+//depening on what page Navbar is rendered, it gets either setQuery or setCategory
 export default function Navbar({ setQuery, setCategory }) {
     //
     return (

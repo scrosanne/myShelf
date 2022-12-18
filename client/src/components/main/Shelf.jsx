@@ -31,8 +31,8 @@ export default function Shelf() {
 
     const filteredBooks = query
         ? books.filter((book) => {
-              return book.author == query;
-          })
+            return book.author == query;
+        })
         : books;
     // console.log("filteredBooks", filteredBooks);
 

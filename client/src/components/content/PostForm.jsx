@@ -13,7 +13,7 @@ export default function PostForm({ id }) {
     };
 
     const handleSubmit = () => {
-        //console.log(input);
+        console.log("post input", input);
         fetch("/post", {
             method: "POST",
             body: JSON.stringify({ input, id }), //stringify object with form input
@@ -35,7 +35,7 @@ export default function PostForm({ id }) {
                 <input
                     type="text"
                     name="content"
-                    placeholder="write somethig here!"
+                    placeholder="choose a category write somethig here!"
                     onChange={(e) => handleInputChange(e)}
                 />
             </div>
