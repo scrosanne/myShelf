@@ -31,18 +31,21 @@ export default function PostForm({ id }) {
 
     return (
         <div className="post-form">
-            <div className="top">
-                <input
+            <div className="post-top">
+                <textarea
+                    rows="6"
+                    cols="7"
                     type="text"
                     name="content"
-                    placeholder="choose a category write somethig here!"
+                    placeholder="choose a category and write somethig here!"
                     onChange={(e) => handleInputChange(e)}
-                />
+                ></textarea>
             </div>
 
-            <div className="bottom">
-                {/* make dropdown  */}
-
+            <div
+                className="post-bottom"
+                style={{ borderTop: "2px dashed black" }}
+            >
                 <select
                     onChange={(e) => handleInputChange(e)}
                     name="category"

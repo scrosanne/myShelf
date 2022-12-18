@@ -155,7 +155,7 @@ button {
     min-width: 180px;
     height: 230px;
 
-    background: white;
+    background-color: white;
     border: 2px solid #494949;
 }
 
@@ -164,6 +164,7 @@ button {
     padding: 5%;
     overflow: scroll;
 }
+
 .post-top p {
     font-style: italic;
     font-weight: 300;
@@ -173,8 +174,6 @@ button {
 
 .post-bottom {
     height: 15%;
-    padding: 2% 0 2% 5%;
-
     border-top: 1px solid black;
 
     display: flex;
@@ -186,6 +185,7 @@ button {
     font-weight: 600;
     letter-spacing: 0.33em;
     text-align: left;
+    margin: 1.5%;
 }
 
 .post-bottom h4 span {
@@ -194,7 +194,6 @@ button {
 
 /* P O S T  F O R M */
 .post-form {
-    position: relative;
     min-width: 180px;
     height: 230px;
 
@@ -206,67 +205,37 @@ button {
     border: 2px solid #494949;
 }
 
-.post-form .top {
-    height: 80%;
-    width: 100%;
-    padding: 5%;
-
-    background: rgb(248, 251, 114);
-}
-
-.post-form .top input {
-    width: 100%;
+.post-top textarea {
+    resize: none;
+    outline: none;
     background: rgb(248, 251, 114);
     border: 1px solid rgb(248, 251, 114);
 
+    text-align: left;
     font-style: italic;
     font-weight: 300;
-    letter-spacing: 0.3em;
-    text-align: left;
+    letter-spacing: 0.2em;
 }
 
-.post-form .bottom {
-    width: 100%;
-    height: 20%;
-    position: relative;
-    bottom: 0;
-
-    border-top: 1px solid black;
-
-    display: flex;
-    justify-content: space-between;
-}
-
-.post-form .bottom button {
-    position: relative;
+.post-bottom button {
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 500;
+    margin-right: 3%;
 }
 
-.post-form .bottom button:hover {
+.post-bottom button:hover {
     font-weight: 300;
 }
 
-.post-form .bottom select {
+.post-bottom select {
     background: rgb(248, 251, 114);
     border: 1px solid rgb(248, 251, 114);
 
-    padding: 4%;
+    padding: 2%;
     font-style: italic;
     font-weight: 600;
     letter-spacing: 0.33em;
-}
-
-.post-form .bottom input {
-    background: rgb(124, 125, 112);
-    border: 1px solid rgb(248, 251, 114);
-
-    font-size: 1em;
-    text-align: center;
-    font-style: italic;
-    font-weight: 600;
-    letter-spacing: 0.24em;
 }
 
 /* I N P U T */
