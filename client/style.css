@@ -226,6 +226,7 @@ button {
     padding: 3% 5%;
 }
 
+/* single ratings */
 .rating h4 {
     letter-spacing: 0.25em;
     display: inline;
@@ -237,6 +238,7 @@ button {
     cursor: pointer;
 }
 
+/* button to hide ratings again */
 .rating h2 {
     position: absolute;
     bottom: -3px;
@@ -246,7 +248,7 @@ button {
 }
 
 .rating h2:hover {
-    font-weight: 200;
+    color: rgb(177, 155, 251);
 }
 
 /* P O S T  F O R M */

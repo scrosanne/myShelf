@@ -45,6 +45,7 @@ export default function Post({ post }) {
                 <h2 onClick={() => setShowRating(true)}>%</h2>
             </div>
 
+            {/* r a t i n g  m o d a l  */}
             {showRating === true && (
                 <div className="rating">
                     <div>
