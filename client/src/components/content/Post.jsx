@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function Post({ post }) {
+    const [error, setError] = useState("");
     const [showRating, setShowRating] = useState(false);
     const [rating, setRating] = useState({
         agree: 0,
@@ -25,7 +26,7 @@ export default function Post({ post }) {
                         spam: post.spam,
                     });
                 } else {
-                    //setError("pls try again");
+                    setError(post.message);
                 }
             });
     };
@@ -66,6 +67,10 @@ export default function Post({ post }) {
                     <div>
                         <h4 onClick={() => ratePost("spam")}>spam</h4>
                         <h4>{rating.spam > 0 && rating.spam}</h4>
+                    </div>
+
+                    <div>
+                        <p>{error}</p>
                     </div>
 
                     <h2 onClick={() => setShowRating(false)}>-</h2>

@@ -8,6 +8,16 @@ const { PORT = 3001 } = process.env;
 const formRouter = require("./routes/form");
 
 // / / m i d d l e w a r e / / / / / / /
+
+const cookieSession = require("cookie-session");
+
+const cookieSessionMiddleware = cookieSession({
+    secret: `I'm always angry.`,
+    maxAge: 1000 * 60 * 60 * 24 * 14,
+});
+
+app.use(cookieSessionMiddleware);
+
 app.use(compression());
 
 app.use(express.json()); //server parses incoming json/application requests

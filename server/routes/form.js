@@ -62,9 +62,17 @@ router.post("/post/:id", (req, res) => {
     const { rating } = req.body;
     const postId = req.params.id;
 
+    //check if user already rated current post
+    if (req.session.postId === postId) {
+        res.json({ success: false, message: "pls only rate once!" });
+        return;
+    }
+
     ratePost(rating, postId)
         .then((rating) => {
             if (rating) {
+                //set cookie to remeber, user rated this post
+                req.session.postId = postId;
                 res.json({
                     success: true,
                     agree: rating.agree,

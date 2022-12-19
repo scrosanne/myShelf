@@ -170,7 +170,7 @@ button {
 .post-top p {
     font-style: italic;
     font-weight: 300;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.25em;
     text-align: left;
 }
 
@@ -199,9 +199,10 @@ button {
 .post-bottom h4 {
     font-style: italic;
     font-weight: 600;
-    letter-spacing: 0.33em;
+    font-size: 0.9em;
+    letter-spacing: 0.21em;
     text-align: left;
-    margin-top: 2%;
+    margin-top: 2.5%;
     margin-left: 3.5%;
 }
 
@@ -238,11 +239,20 @@ button {
     cursor: pointer;
 }
 
+.rating p {
+    font-weight: 00;
+    font-style: italic;
+    color: rgb(177, 155, 251);
+
+    position: absolute;
+    bottom: 3px;
+}
+
 /* button to hide ratings again */
 .rating h2 {
     position: absolute;
-    bottom: -3px;
-    right: 11px;
+    bottom: -4px;
+    right: 9px;
 
     cursor: pointer;
 }
