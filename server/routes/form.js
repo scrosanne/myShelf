@@ -64,7 +64,7 @@ router.post("/post/:id", (req, res) => {
 
     //check if user already rated current post
     if (req.session.postId === postId) {
-        res.json({ success: false, message: "pls only rate once!" });
+        res.json({ success: false, message: "not again!" });
         return;
     }
 

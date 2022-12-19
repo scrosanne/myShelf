@@ -239,13 +239,20 @@ button {
     cursor: pointer;
 }
 
-.rating p {
-    font-weight: 00;
+.error-post {
+    font-weight: 200;
     font-style: italic;
+    letter-spacing: 0.25em;
     color: rgb(177, 155, 251);
 
     position: absolute;
     bottom: 3px;
+}
+
+.error-form {
+    font-weight: 200;
+    font-style: italic;
+    color: rgb(177, 155, 251);
 }
 
 /* button to hide ratings again */

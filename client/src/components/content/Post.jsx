@@ -69,7 +69,7 @@ export default function Post({ post }) {
                         <h4>{rating.spam > 0 && rating.spam}</h4>
                     </div>
 
-                    <div>
+                    <div className="error-post">
                         <p>{error}</p>
                     </div>
 

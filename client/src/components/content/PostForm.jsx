@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function PostForm({ id }) {
-    //const [error, setError] = useState("");
+    const [error, setError] = useState("");
     const [input, setInput] = useState({});
 
     const handleInputChange = (e) => {
@@ -13,7 +13,12 @@ export default function PostForm({ id }) {
     };
 
     const handleSubmit = () => {
-        console.log("post input", input);
+        //check for complete input
+        if (!input.category || !input.content) {
+            setError("something is missing");
+            return;
+        }
+
         fetch("/post", {
             method: "POST",
             body: JSON.stringify({ input, id }), //stringify object with form input
@@ -32,6 +37,7 @@ export default function PostForm({ id }) {
     return (
         <div className="post-form">
             <div className="post-top">
+                <p className="error-form">{error}</p>
                 <textarea
                     rows="6"
                     cols="7"
