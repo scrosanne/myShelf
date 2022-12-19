@@ -52,9 +52,10 @@ function ratePost(rating, post_id) {
     return db.query(
         `UPDATE posts 
                         SET ${rating} = ${rating} + 1
-                        WHERE id = $1`,
+                        WHERE id = $1
+                        RETURNING *`,
         [post_id]
-    );
+    ).then((result) => result.rows[0]);
    
 }
 

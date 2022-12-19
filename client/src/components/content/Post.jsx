@@ -2,20 +2,28 @@ import { useState } from "react";
 
 export default function Post({ post }) {
     const [showRating, setShowRating] = useState(false);
+    const [rating, setRating] = useState({
+        agree: 0,
+        disagree: 0,
+        incorrect: 0,
+        spam: 0,
+    });
 
     const ratePost = (rating) => {
-        // postId = e.currentTarget;
-        console.log("rate", rating, post.id);
-
-        fetch(`/post/${post.id}/`, {
+        fetch(`/post/${post.id}`, {
             method: "POST",
             body: JSON.stringify({ rating }), //stringify object with form input
             headers: { "Content-Type": "application/json" },
         })
             .then((res) => res.json())
-            .then((response) => {
-                if (response.success === true) {
-                    console.log("success");
+            .then((post) => {
+                if (post.success === true) {
+                    setRating({
+                        agree: post.agree,
+                        disagree: post.disagree,
+                        incorrect: post.incorrect,
+                        spam: post.spam,
+                    });
                 } else {
                     //setError("pls try again");
                 }

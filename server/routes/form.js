@@ -64,10 +64,14 @@ router.post("/post/:id", (req, res) => {
 
     ratePost(rating, postId)
         .then((rating) => {
-            console.log("rating server side", rating);
-            //response necessarry, else nothing to fetch!
             if (rating) {
-                res.json({ success: true });
+                res.json({
+                    success: true,
+                    agree: rating.agree,
+                    disagree: rating.disagree,
+                    incorrect: rating.incorrect,
+                    spam: rating.spam,
+                });
             } else {
                 res.json({ success: false });
             }
