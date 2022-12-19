@@ -153,6 +153,7 @@ button {
 
 /* P O S T */
 .post {
+    position: relative;
     min-width: 180px;
     height: 230px;
 
@@ -181,33 +182,13 @@ button {
     justify-content: space-between;
 }
 
-/* SHOW R A T I N G */
-.post-bottom .rating {
-    padding-top: 2%;
-    padding-left: 5%;
-}
-
-.post-bottom .rating h4 {
-    letter-spacing: 0.25em;
-    display: inline;
-}
-
-.post-bottom .rating h4:hover {
-    font-weight: 200;
-    cursor: pointer;
-}
-
-/* SHOW C A T E G O R Y */
+/* C A T E G O R Y */
 .post-bottom h2 {
     cursor: pointer;
+    font-size: 1.4em;
     margin-right: 4%;
 
-    font-style: italic;
     font-weight: 500;
-}
-
-.post-bottom h2:hover {
-    font-weight: 200;
 }
 
 .post-bottom h4 {
@@ -221,6 +202,46 @@ button {
 
 .post-bottom h4 span {
     font-weight: 300;
+}
+
+/* R A T I N G */
+.rating {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border: 3px solid rgb(177, 155, 251);
+    background-color: white;
+}
+
+.rating div {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 5%;
+}
+
+.rating h4 {
+    letter-spacing: 0.25em;
+    display: inline;
+    font-style: italic;
+}
+
+.rating h4:hover {
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.rating h2 {
+    position: absolute;
+    bottom: -3px;
+    right: 11px;
+
+    cursor: pointer;
+}
+
+.rating h2:hover {
+    font-weight: 200;
 }
 
 /* P O S T  F O R M */

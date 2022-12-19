@@ -37,28 +37,39 @@ export default function Post({ post }) {
             </div>
 
             <div className="post-bottom">
-                {showRating === false && (
-                    <>
-                        <h4>
-                            <span>#</span>
-                            {post.category}
-                        </h4>
+                <h4>
+                    <span>#</span>
+                    {post.category}
+                </h4>
 
-                        <h2 onClick={() => setShowRating(true)}>+</h2>
-                    </>
-                )}
-
-                {showRating === true && (
-                    <>
-                        <div className="rating">
-                            <h4 onClick={() => ratePost("agree")}>yes</h4>
-                            <h4 onClick={() => ratePost("disagree")}>no</h4>
-                            <h4 onClick={() => ratePost("incorrect")}>false</h4>
-                        </div>
-                        <h2 onClick={() => setShowRating(false)}>-</h2>
-                    </>
-                )}
+                <h2 onClick={() => setShowRating(true)}>➩</h2>
             </div>
+
+            {showRating === true && (
+                <div className="rating">
+                    <div>
+                        <h4 onClick={() => ratePost("agree")}>agree</h4>
+                        <h4>{rating.agree > 0 && rating.agree}</h4>
+                    </div>
+
+                    <div>
+                        <h4 onClick={() => ratePost("disagree")}>disagree</h4>
+                        <h4>{rating.disagree > 0 && rating.disagree}</h4>
+                    </div>
+
+                    <div>
+                        <h4 onClick={() => ratePost("incorrect")}>incorrect</h4>
+                        <h4>{rating.incorrect > 0 && rating.incorrect}</h4>
+                    </div>
+
+                    <div>
+                        <h4 onClick={() => ratePost("spam")}>spam</h4>
+                        <h4>{rating.spam > 0 && rating.spam}</h4>
+                    </div>
+
+                    <h2 onClick={() => setShowRating(false)}>-</h2>
+                </div>
+            )}
         </div>
     );
 }
