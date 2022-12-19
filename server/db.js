@@ -49,8 +49,6 @@ function getPostsByBookId(id) {
 }
 
 function ratePost(rating, post_id) {
-    console.log(post_id);
-    console.log(rating);
     return db.query(
         `UPDATE posts 
                         SET ${rating} = ${rating} + 1
