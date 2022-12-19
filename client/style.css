@@ -180,12 +180,42 @@ button {
     justify-content: space-between;
 }
 
+/* SHOW R A T I N G */
+.post-bottom .rating {
+    padding-top: 2%;
+    padding-left: 5%;
+}
+
+.post-bottom .rating h4 {
+    letter-spacing: 0.25em;
+    display: inline;
+}
+
+.post-bottom .rating h4:hover {
+    font-weight: 200;
+    cursor: pointer;
+}
+
+/* SHOW C A T E G O R Y */
+.post-bottom h2 {
+    cursor: pointer;
+    margin-right: 4%;
+
+    font-style: italic;
+    font-weight: 500;
+}
+
+.post-bottom h2:hover {
+    font-weight: 200;
+}
+
 .post-bottom h4 {
     font-style: italic;
     font-weight: 600;
     letter-spacing: 0.33em;
     text-align: left;
-    margin: 1.5%;
+    margin-top: 2%;
+    margin-left: 3.5%;
 }
 
 .post-bottom h4 span {
@@ -221,7 +251,6 @@ button {
     cursor: pointer;
     font-size: 1.2em;
     font-weight: 500;
-    margin-right: 3%;
 }
 
 .post-bottom button:hover {
@@ -232,7 +261,10 @@ button {
     background: rgb(248, 251, 114);
     border: 1px solid rgb(248, 251, 114);
 
-    padding: 2%;
+    width: 80%;
+    padding: 0;
+    margin-left: 2%;
+
     font-style: italic;
     font-weight: 600;
     letter-spacing: 0.33em;
