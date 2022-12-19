@@ -51,8 +51,14 @@ export default function PostForm({ id }) {
                     name="category"
                     id="category"
                 >
-                    <option value="quote">#quote</option>
-                    <option value="thoughts">#thoughts</option>
+                    <option value="category">category</option>
+                    <option value="quote">quote</option>
+                    <option value="thoughts">thoughts</option>
+                    <option value="take away">take away</option>
+                    <option value="storyline">storyline</option>
+                    <option value="characters">characters</option>
+                    <option value="best loved">best loved</option>
+                    <option value="reads alike">reads alike</option>
                 </select>
                 <button onClick={() => handleSubmit()}>+</button>
             </div>
