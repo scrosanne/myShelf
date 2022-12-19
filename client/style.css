@@ -29,6 +29,11 @@ body {
     margin-left: 1%;
 }
 
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+
 /* S E A R C H  A R E A */
 .search {
     margin-right: 1%;
