@@ -48,11 +48,24 @@ function getPostsByBookId(id) {
     return db.query(`SELECT * FROM posts WHERE book_id = $1`, [id]).then((result) => result.rows);
 }
 
+function ratePost(rating, post_id) {
+    console.log(post_id);
+    console.log(rating);
+    return db.query(
+        `UPDATE posts 
+                        SET ${rating} = ${rating} + 1
+                        WHERE id = $1`,
+        [post_id]
+    );
+   
+}
+
 module.exports = {
     addBook,
     getBooks,
     getBookById,
 
     addPost,
-    getPostsByBookId
+    getPostsByBookId,
+    ratePost
 };

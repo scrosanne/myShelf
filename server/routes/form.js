@@ -7,6 +7,7 @@ const {
     getBookById,
     addPost,
     getPostsByBookId,
+    ratePost,
 } = require("../db");
 
 // / / / / / / / / G E T  B O O K  B Y  I D / / / / / / / /
@@ -30,7 +31,6 @@ router.post("/book", (req, res) => {
 
     addBook(author, title)
         .then((book) => {
-            console.log(book);
             //response necessarry, else nothing to fetch!
             if (book) {
                 res.json({ success: true });
@@ -48,9 +48,25 @@ router.post("/post", (req, res) => {
 
     addPost(book_id, category, content)
         .then((post) => {
-            console.log("post server side", post);
-            //response necessarry, else nothing to fetch!
             if (post) {
+                res.json({ success: true });
+            } else {
+                res.json({ success: false });
+            }
+        })
+        .catch((err) => console.log(err));
+});
+
+// / / / / / / / / R A T E  P O S T / / / / / / / /
+router.post("/post/:id", (req, res) => {
+    const { rating } = req.body;
+    const postId = req.params.id;
+
+    ratePost(rating, postId)
+        .then((rating) => {
+            console.log("rating server side", rating);
+            //response necessarry, else nothing to fetch!
+            if (rating) {
                 res.json({ success: true });
             } else {
                 res.json({ success: false });
@@ -63,7 +79,6 @@ router.post("/post", (req, res) => {
 router.get("/posts/:id", (req, res) => {
     const bookId = req.params.id;
     getPostsByBookId(bookId).then((post) => {
-        console.log(post);
         res.json(post);
     });
 });
