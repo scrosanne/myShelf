@@ -12,7 +12,7 @@ export default function BookForm({ getAllBooks, books }) {
         });
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
         //check for complete input
         if (!input.author || !input.title) {
             setError("forgot something?");
@@ -40,6 +40,7 @@ export default function BookForm({ getAllBooks, books }) {
             .then((response) => {
                 if (response.success === true) {
                     getAllBooks();
+                    setInput({ author: "", title: "" });
                 } else {
                     setError("pls try again");
                 }
@@ -54,6 +55,7 @@ export default function BookForm({ getAllBooks, books }) {
                 name="author"
                 placeholder="AUTHOR"
                 onChange={(e) => handleInputChange(e)}
+                value={input.author}
             ></textarea>
 
             <textarea
@@ -61,6 +63,7 @@ export default function BookForm({ getAllBooks, books }) {
                 name="title"
                 placeholder="TITLE"
                 onChange={(e) => handleInputChange(e)}
+                value={input.title}
             ></textarea>
 
             <button onClick={() => handleSubmit()}>submit</button>

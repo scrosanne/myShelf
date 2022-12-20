@@ -28,6 +28,7 @@ export default function PostForm({ id, getAllPosts }) {
             .then((response) => {
                 if (response.success === true) {
                     getAllPosts();
+                    setInput({ content: "", category: "" });
                 } else {
                     setError("pls try again");
                 }
@@ -45,6 +46,7 @@ export default function PostForm({ id, getAllPosts }) {
                     name="content"
                     placeholder="choose a category and write somethig here!"
                     onChange={(e) => handleInputChange(e)}
+                    value={input.content}
                 ></textarea>
             </div>
 
