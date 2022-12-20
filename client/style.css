@@ -69,9 +69,10 @@ body {
 }
 
 .banner {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 1;
     background-color: rgb(248, 251, 114);
     border: 1px solid black;
     padding: 1%;
