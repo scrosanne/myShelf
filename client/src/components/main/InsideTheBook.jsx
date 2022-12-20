@@ -12,19 +12,17 @@ export default function InsideTheBook() {
 
     const { id } = useParams(); //get id from url
 
-    useEffect(() => {
-        //get all posts
+    const getAllPosts = () => {
         fetch(`/posts/${id}`)
             .then((res) => res.json())
             .then((posts) => {
                 if (posts) {
-                    console.log("posts", posts);
                     setPosts([...posts]);
                 } else {
-                    //"success false"
+                    console.log("failed getting all posts");
                 }
             });
-    }, []);
+    };
 
     const filteredPosts = category
         ? posts.filter((post) => {
@@ -36,6 +34,10 @@ export default function InsideTheBook() {
         : posts;
 
 
+    useEffect(() => {
+        getAllPosts();
+    }, []);
+    
     return (
         <>
             <Navbar setCategory={setCategory} />
@@ -43,7 +45,7 @@ export default function InsideTheBook() {
             <Banner id={id} />
 
             <div className="inside">
-                <PostForm id={id} />
+                <PostForm id={id} getAllPosts={getAllPosts} />
 
                 {filteredPosts.map((post) => {
                     return <Post key={post.id} post={post} />;

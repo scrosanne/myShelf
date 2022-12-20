@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function PostForm({ id }) {
+export default function PostForm({ id, getAllPosts }) {
     const [error, setError] = useState("");
     const [input, setInput] = useState({});
 
@@ -21,15 +21,15 @@ export default function PostForm({ id }) {
 
         fetch("/post", {
             method: "POST",
-            body: JSON.stringify({ input, id }), //stringify object with form input
+            body: JSON.stringify({ input, id }),
             headers: { "Content-Type": "application/json" },
         })
             .then((res) => res.json())
             .then((response) => {
                 if (response.success === true) {
-                    location.reload();
+                    getAllPosts();
                 } else {
-                    //setError("pls try again");
+                    setError("pls try again");
                 }
             });
     };
