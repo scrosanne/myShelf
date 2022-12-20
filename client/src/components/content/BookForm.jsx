@@ -1,8 +1,16 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function BookForm({ getAllBooks, books }) {
     const [error, setError] = useState("");
     const [input, setInput] = useState({});
+    const bookForm = useRef();
+
+    const submitHover = () => {
+        bookForm.current.style.border = "1px solid black";
+    };
+    const submitLeave = () => {
+        bookForm.current.style.border = "2px dashed black";
+    };
 
     const handleInputChange = (e) => {
         const text = e.currentTarget.value;
@@ -12,7 +20,7 @@ export default function BookForm({ getAllBooks, books }) {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = () => {
         //check for complete input
         if (!input.author || !input.title) {
             setError("forgot something?");
@@ -48,7 +56,7 @@ export default function BookForm({ getAllBooks, books }) {
     };
 
     return (
-        <div className="book-form">
+        <div className="book-form" ref={bookForm}>
             <p className="error-book-form">{error}</p>
             <textarea
                 type="text"
@@ -66,7 +74,13 @@ export default function BookForm({ getAllBooks, books }) {
                 value={input.title}
             ></textarea>
 
-            <button onClick={() => handleSubmit()}>submit</button>
+            <button
+                onClick={() => handleSubmit()}
+                onMouseEnter={() => submitHover()}
+                onMouseLeave={() => submitLeave()}
+            >
+                submit
+            </button>
         </div>
     );
 }
