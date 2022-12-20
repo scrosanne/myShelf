@@ -123,8 +123,8 @@ body {
 .book-form {
     width: 196px;
     height: 286px;
-    display: flex;
 
+    display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 10%;
@@ -309,7 +309,13 @@ body {
     border: 2px solid #494949;
 }
 
+.post-top {
+    display: flex;
+    flex-direction: column;
+}
+
 .post-top textarea {
+    height: 100%;
     resize: none;
     outline: none;
     background: rgb(248, 251, 114);
@@ -322,6 +328,10 @@ body {
 }
 
 .post-bottom button {
+    background: rgb(248, 251, 114);
+    border: 1px solid rgb(248, 251, 114);
+
+    margin-right: 3%;
     cursor: pointer;
     font-size: 1.2em;
     font-weight: 500;

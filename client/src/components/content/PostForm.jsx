@@ -39,8 +39,8 @@ export default function PostForm({ id, getAllPosts }) {
             <div className="post-top">
                 <p className="error-post-form">{error}</p>
                 <textarea
-                    rows="6"
-                    cols="7"
+                    // rows="6"
+                    // cols="7"
                     type="text"
                     name="content"
                     placeholder="choose a category and write somethig here!"
