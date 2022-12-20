@@ -54,6 +54,11 @@ body {
     font-weight: 200;
 }
 
+.search input::placeholder {
+    color: black;
+    font-weight: 300;
+}
+
 /* search field for InsideTheBook  */
 .search select {
     width: 200px;
@@ -150,7 +155,6 @@ body {
     text-align: center;
     font-weight: 600;
     letter-spacing: 0.24em;
-    color: rgb(177, 155, 251);
 }
 
 .book-form button {
@@ -161,7 +165,6 @@ body {
     font-style: italic;
     font-weight: 600;
     letter-spacing: 0.2em;
-    color: rgb(177, 155, 251);
 
     cursor: pointer;
 }
@@ -171,10 +174,10 @@ body {
     letter-spacing: 0.3em;
 }
 
-::placeholder {
+/* ::placeholder {
     color: rgb(177, 155, 251);
     font-weight: 800;
-}
+} */
 
 /* I N S I D E  T H E  B O O K */
 .inside {
@@ -274,7 +277,7 @@ body {
 }
 
 .error-post {
-    font-weight: 200;
+    font-weight: 100;
     font-style: italic;
     letter-spacing: 0.25em;
     color: rgb(177, 155, 251);
@@ -284,14 +287,15 @@ body {
 }
 
 .error-post-form {
-    font-weight: 200;
+    font-weight: 100;
     font-style: italic;
     color: rgb(177, 155, 251);
 }
 
 .error-book-form {
-    text-align: center;
-    font-weight: 400;
+    text-align: left;
+    font-weight: 100;
+    letter-spacing: 0.3em;
     font-style: italic;
     color: rgb(177, 155, 251);
 }
