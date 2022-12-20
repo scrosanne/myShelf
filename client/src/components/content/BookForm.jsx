@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function BookForm({ getAllBooks }) {
+export default function BookForm({ getAllBooks, books }) {
     const [error, setError] = useState("");
     const [input, setInput] = useState({});
 
@@ -11,10 +11,23 @@ export default function BookForm({ getAllBooks }) {
             [e.currentTarget.name]: text,
         });
     };
+
     const handleSubmit = () => {
         //check for complete input
         if (!input.author || !input.title) {
             setError("forgot something?");
+            return;
+        }
+
+        //returns undefined if book does not yet exist
+        const doubleItem = books.find(
+            (book) =>
+                book.author === input.author.toUpperCase() &&
+                book.title === input.title.toUpperCase()
+        );
+
+        if (doubleItem !== undefined) {
+            setError("book already exists!");
             return;
         }
 

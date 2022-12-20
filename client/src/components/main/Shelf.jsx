@@ -43,7 +43,7 @@ export default function Shelf() {
             <Navbar setQuery={setQuery} />
 
             <div className="shelf">
-                <BookForm getAllBooks={getAllBooks}/>
+                <BookForm getAllBooks={getAllBooks} books={books}/>
 
                 {filteredBooks.map((book) => {
                     return (
