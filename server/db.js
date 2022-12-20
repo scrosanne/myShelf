@@ -56,7 +56,6 @@ function ratePost(rating, post_id) {
                         RETURNING *`,
         [post_id]
     ).then((result) => result.rows[0]);
-   
 }
 
 module.exports = {
