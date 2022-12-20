@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function RatingModal({ post, setShowRating }) {
     const [error, setError] = useState("");
@@ -18,40 +18,46 @@ export default function RatingModal({ post, setShowRating }) {
             .then((res) => res.json())
             .then((post) => {
                 if (post.success === true) {
-                    setRating({
-                        agree: post.agree,
-                        disagree: post.disagree,
-                        incorrect: post.incorrect,
-                        spam: post.spam,
-                    });
+                    updateRating(post);
                 } else {
                     setError(post.message);
                 }
             });
     };
 
-    //useEffect to get ratings
+    const updateRating = (post) => {
+        setRating({
+            agree: post.agree,
+            disagree: post.disagree,
+            incorrect: post.incorrect,
+            spam: post.spam,
+        });
+    };
+
+    useEffect(() => {
+        updateRating(post);
+    }, []);
 
     return (
         <div className="rating">
             <div>
                 <h4 onClick={() => ratePost("agree")}>agree</h4>
-                <h4>{rating.agree > 0 && rating.agree}</h4>
+                <h4>{rating.agree}</h4>
             </div>
 
             <div>
                 <h4 onClick={() => ratePost("disagree")}>disagree</h4>
-                <h4>{rating.disagree > 0 && rating.disagree}</h4>
+                <h4>{rating.disagree}</h4>
             </div>
 
             <div>
                 <h4 onClick={() => ratePost("incorrect")}>incorrect</h4>
-                <h4>{rating.incorrect > 0 && rating.incorrect}</h4>
+                <h4>{rating.incorrect}</h4>
             </div>
 
             <div>
                 <h4 onClick={() => ratePost("spam")}>spam</h4>
-                <h4>{rating.spam > 0 && rating.spam}</h4>
+                <h4>{rating.spam}</h4>
             </div>
 
             <div className="error-post">
