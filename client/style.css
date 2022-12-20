@@ -26,7 +26,7 @@ body {
 
     letter-spacing: 0.33em;
     text-align: left;
-    margin-left: 1%;
+    margin-left: 5%;
 }
 
 .navbar a {
@@ -91,15 +91,15 @@ body {
 
 .shelf {
     margin: 2%;
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3%;
 }
 
 .book {
-    width: 196px;
-    height: 286px;
+    width: 190px;
+    height: 280px;
 
-    margin: 2%;
     padding: 1%;
 
     display: flex;
@@ -118,12 +118,12 @@ body {
     box-shadow: 11px 9px 0px 0px #8d8c8c80;
     cursor: pointer;
 }
+
 /* B O O K  F O R M */
 .book-form {
     width: 196px;
     height: 286px;
     display: flex;
-    margin: 2%;
 
     justify-content: center;
     flex-direction: column;
@@ -152,6 +152,7 @@ button {
 /* I N S I D E  T H E  B O O K */
 .inside {
     margin: 2%;
+    margin-bottom: 15%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 5%;
