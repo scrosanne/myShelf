@@ -20,24 +20,23 @@ export default function Shelf() {
             .then((res) => res.json())
             .then((books) => {
                 if (books) {
-                    console.log("books", books);
                     setBooks([...books]);
                 } else {
-                    //"success false"
+                    console.log("failed fetching all books");
                 }
             });
     };
 
+    const filteredBooks = query
+        ? books.filter((book) => {
+            return book.author.includes(query) || book.title.includes(query);
+        })
+        : books;
+    console.log("filteredBooks", filteredBooks);
+
     useEffect(() => {
         getAllBooks();
     }, []);
-
-    const filteredBooks = query
-        ? books.filter((book) => {
-            return book.author == query;
-        })
-        : books;
-    // console.log("filteredBooks", filteredBooks);
 
     return (
         <>
