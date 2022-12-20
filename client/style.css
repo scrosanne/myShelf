@@ -102,6 +102,7 @@ body {
 }
 
 .book {
+    position: relative;
     width: 190px;
     height: 280px;
 
@@ -121,10 +122,14 @@ body {
     background-color: white;
     border: 1px solid #494949;
 
-    box-shadow: 11px 9px 0px 0px #8d8c8c80;
+    transition: 0.4s;
     cursor: pointer;
 
     overflow: scroll;
+}
+
+.book:hover {
+    box-shadow: 11px 9px 0px 0px #8d8c8c80;
 }
 
 /* B O O K  F O R M */
