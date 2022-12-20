@@ -28,8 +28,10 @@ router.get("/books", (req, res) => {
 // / / / / / / / / B O O K  F O R M / / / / / / / /
 router.post("/book", (req, res) => {
     const { author, title } = req.body;
+    const uppercaseAuthor = author.toUpperCase();
+    const uppercaseTitle = title.toUpperCase();
 
-    addBook(author, title)
+    addBook(uppercaseAuthor, uppercaseTitle)
         .then((book) => {
             if (book) {
                 res.json({ success: true });

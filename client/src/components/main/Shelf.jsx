@@ -29,7 +29,7 @@ export default function Shelf() {
 
     const filteredBooks = query
         ? books.filter((book) => {
-            return book.author.includes(query) || book.title.includes(query);
+            return book.author.includes(query.toUpperCase()) || book.title.includes(query.toUpperCase());
         })
         : books;
     console.log("filteredBooks", filteredBooks);
