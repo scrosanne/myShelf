@@ -36,19 +36,19 @@ export default function BookForm({ getAllBooks }) {
     return (
         <div className="book-form">
             <p className="error-book-form">{error}</p>
-            <input
+            <textarea
                 type="text"
                 name="author"
                 placeholder="AUTHOR"
                 onChange={(e) => handleInputChange(e)}
-            />
+            ></textarea>
 
-            <input
+            <textarea
                 type="text"
                 name="title"
                 placeholder="TITLE"
                 onChange={(e) => handleInputChange(e)}
-            />
+            ></textarea>
 
             <button onClick={() => handleSubmit()}>submit</button>
         </div>

@@ -133,22 +133,36 @@ body {
     border: 2px dashed #494949;
 }
 
-.book-form input,
-button {
+.book-form textarea {
+    resize: none;
+    outline: none;
     background: rgb(248, 251, 114);
     border: 1px solid rgb(248, 251, 114);
 
     font-size: 1em;
-    text-align: center;
     font-style: italic;
+    text-align: center;
     font-weight: 600;
     letter-spacing: 0.24em;
 }
 
 .book-form button {
+    background: rgb(248, 251, 114);
+    border: 1px solid rgb(248, 251, 114);
+
     font-size: 0.8em;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+
     cursor: pointer;
 }
+
+.book-form button:hover {
+    font-weight: 400;
+    letter-spacing: 0.3em;
+}
+
 /* I N S I D E  T H E  B O O K */
 .inside {
     margin: 2%;
