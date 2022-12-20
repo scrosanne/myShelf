@@ -39,7 +39,7 @@ export default function RatingModal({ post, setShowRating }) {
     }, []);
 
     return (
-        <div className="rating">
+        <div className="rating" onMouseLeave={() => setShowRating(false)}>
             <div>
                 <h4 onClick={() => ratePost("agree")}>agree</h4>
                 <h4>{rating.agree}</h4>
@@ -63,8 +63,6 @@ export default function RatingModal({ post, setShowRating }) {
             <div className="error-post">
                 <p>{error}</p>
             </div>
-
-            <h2 onClick={() => setShowRating(false)}>-</h2>
         </div>
     );
 }

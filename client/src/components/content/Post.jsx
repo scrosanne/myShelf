@@ -16,7 +16,7 @@ export default function Post({ post }) {
                     {post.category}
                 </h4>
 
-                <h2 onClick={() => setShowRating(true)}>%</h2>
+                <h2 onMouseEnter={() => setShowRating(true)}>%</h2>
             </div>
 
             {showRating && (
