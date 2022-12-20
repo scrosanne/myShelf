@@ -100,13 +100,14 @@ body {
     width: 190px;
     height: 280px;
 
-    padding: 1%;
+    padding: 2%;
 
     display: flex;
     justify-content: center;
     flex-flow: column wrap;
-    gap: 7%;
+    gap: 10%;
 
+    font-size: 0.9em;
     text-align: center;
     font-style: italic;
     font-weight: 500;
@@ -117,6 +118,8 @@ body {
 
     box-shadow: 11px 9px 0px 0px #8d8c8c80;
     cursor: pointer;
+
+    overflow: scroll;
 }
 
 /* B O O K  F O R M */
@@ -124,16 +127,19 @@ body {
     width: 196px;
     height: 286px;
 
+    padding: 5%;
+
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 10%;
+    gap: 5%;
 
     background: rgb(248, 251, 114);
     border: 2px dashed #494949;
 }
 
 .book-form textarea {
+    height: 100%;
     resize: none;
     outline: none;
     background: rgb(248, 251, 114);
@@ -144,16 +150,18 @@ body {
     text-align: center;
     font-weight: 600;
     letter-spacing: 0.24em;
+    color: rgb(177, 155, 251);
 }
 
 .book-form button {
     background: rgb(248, 251, 114);
     border: 1px solid rgb(248, 251, 114);
 
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-style: italic;
     font-weight: 600;
     letter-spacing: 0.2em;
+    color: rgb(177, 155, 251);
 
     cursor: pointer;
 }
@@ -161,6 +169,11 @@ body {
 .book-form button:hover {
     font-weight: 400;
     letter-spacing: 0.3em;
+}
+
+::placeholder {
+    color: rgb(177, 155, 251);
+    font-weight: 800;
 }
 
 /* I N S I D E  T H E  B O O K */
@@ -323,8 +336,9 @@ body {
 
     text-align: left;
     font-style: italic;
-    font-weight: 300;
+    font-weight: 700;
     letter-spacing: 0.2em;
+    color: rgb(177, 155, 251);
 }
 
 .post-bottom button {
