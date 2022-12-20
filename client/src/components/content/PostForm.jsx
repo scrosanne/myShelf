@@ -37,7 +37,7 @@ export default function PostForm({ id, getAllPosts }) {
     return (
         <div className="post-form">
             <div className="post-top">
-                <p className="error-form">{error}</p>
+                <p className="error-post-form">{error}</p>
                 <textarea
                     rows="6"
                     cols="7"

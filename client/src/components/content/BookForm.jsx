@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function BookForm() {
-    //const [error, setError] = useState("");
+export default function BookForm({ getAllBooks }) {
+    const [error, setError] = useState("");
     const [input, setInput] = useState({});
 
     const handleInputChange = (e) => {
@@ -12,7 +12,12 @@ export default function BookForm() {
         });
     };
     const handleSubmit = () => {
-        console.log(input);
+        //check for complete input
+        if (!input.author || !input.title) {
+            setError("forgot something?");
+            return;
+        }
+
         fetch("/book", {
             method: "POST",
             body: JSON.stringify(input), //stringify object with form input
@@ -21,15 +26,16 @@ export default function BookForm() {
             .then((res) => res.json())
             .then((response) => {
                 if (response.success === true) {
-                    location.reload();
+                    getAllBooks();
                 } else {
-                    //setError("pls try again");
+                    setError("pls try again");
                 }
             });
     };
 
     return (
         <div className="book-form">
+            <p className="error-book-form">{error}</p>
             <input
                 type="text"
                 name="author"

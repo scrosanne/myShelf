@@ -15,8 +15,7 @@ export default function Shelf() {
         navigate(`/book/${id}`);
     };
 
-    useEffect(() => {
-        //get all books
+    const getAllBooks = () => {
         fetch("/books")
             .then((res) => res.json())
             .then((books) => {
@@ -27,6 +26,10 @@ export default function Shelf() {
                     //"success false"
                 }
             });
+    };
+
+    useEffect(() => {
+        getAllBooks();
     }, []);
 
     const filteredBooks = query
@@ -41,7 +44,7 @@ export default function Shelf() {
             <Navbar setQuery={setQuery} />
 
             <div className="shelf">
-                <BookForm />
+                <BookForm getAllBooks={getAllBooks}/>
 
                 {filteredBooks.map((book) => {
                     return (

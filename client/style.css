@@ -254,8 +254,15 @@ button {
     bottom: 3px;
 }
 
-.error-form {
+.error-post-form {
     font-weight: 200;
+    font-style: italic;
+    color: rgb(177, 155, 251);
+}
+
+.error-book-form {
+    text-align: center;
+    font-weight: 400;
     font-style: italic;
     color: rgb(177, 155, 251);
 }

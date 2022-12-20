@@ -31,7 +31,6 @@ router.post("/book", (req, res) => {
 
     addBook(author, title)
         .then((book) => {
-            //response necessarry, else nothing to fetch!
             if (book) {
                 res.json({ success: true });
             } else {
