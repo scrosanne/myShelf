@@ -18,7 +18,6 @@ export default function RatingModal({ post, setShowRating }) {
         })
             .then((res) => res.json())
             .then((ratings) => {
-                console.log(ratings);
                 if (ratings.success === true) {
                     setRating({
                         agree: ratings.agree,
@@ -37,12 +36,12 @@ export default function RatingModal({ post, setShowRating }) {
             .then((res) => res.json())
             .then((post) => {
                 if (post) {
-                    console.log(post);
+                    console.log("useeffect", post);
                     setRating({
-                        agree: post.agree,
-                        disagree: post.disagree,
-                        incorrect: post.incorrect,
-                        spam: post.spam,
+                        agree: post[0].agree,
+                        disagree: post[0].disagree,
+                        incorrect: post[0].incorrect,
+                        spam: post[0].spam,
                     });
                 } else {
                     console.log("failed getting all ratings");
