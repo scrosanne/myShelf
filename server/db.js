@@ -10,6 +10,7 @@ const db = spicedPg(
         `postgres:${user}:${password}@localhost:5432/${database}`
 );
 
+// B O O K S / / / / / / / / / / / / / / / / / / / / / / / / / /
 function addBook(author, title) {
     return db
         .query(
@@ -32,6 +33,7 @@ function getBookById(id) {
         .then((result) => result.rows[0]);
 }
 
+// P O S T S / / / / / / / / / / / / / / / / / / / / / / / / / /
 function addPost(book_id, category, content) {
     return db
         .query(
@@ -48,14 +50,19 @@ function getPostsByBookId(id) {
     return db.query(`SELECT * FROM posts WHERE book_id = $1`, [id]).then((result) => result.rows);
 }
 
+// R A T I N G / / / / / / / / / / / / / / / / / / / / / / / / / /
 function ratePost(rating, post_id) {
     return db.query(
         `UPDATE posts 
                         SET ${rating} = ${rating} + 1
                         WHERE id = $1
-                        RETURNING *`,
+                        RETURNING agree, disagree, incorrect, spam`,
         [post_id]
     ).then((result) => result.rows[0]);
+}
+
+function getRatingByPostId(id) {
+    return db.query(`SELECT agree, disagree, incorrect, spam FROM posts WHERE id = $1`, [id]).then((result) => result.rows);
 }
 
 module.exports = {
@@ -65,5 +72,6 @@ module.exports = {
 
     addPost,
     getPostsByBookId,
-    ratePost
+    ratePost,
+    getRatingByPostId
 };

@@ -8,6 +8,7 @@ const {
     addPost,
     getPostsByBookId,
     ratePost,
+    getRatingByPostId,
 } = require("../db");
 
 // / / / / / / / / G E T  B O O K  B Y  I D / / / / / / / /
@@ -86,6 +87,14 @@ router.post("/post/:id", (req, res) => {
             }
         })
         .catch((err) => console.log(err));
+});
+
+// / / / / / / / / G E T  R A T I N G  B Y  I D / / / / / / / /
+router.get("/rating/:id", (req, res) => {
+    const postId = req.params.id;
+    getRatingByPostId(postId).then((post) => {
+        res.json(post);
+    });
 });
 
 // / / / / / / / / G E T  A L L  P O S T S / / / / / / / /

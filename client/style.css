@@ -96,6 +96,7 @@ body {
 
 .shelf {
     margin: 2%;
+    margin-bottom: 7%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 3%;
@@ -117,7 +118,8 @@ body {
     text-align: center;
     font-style: italic;
     font-weight: 500;
-    letter-spacing: 0.24em;
+    letter-spacing: 0.2em;
+    line-height: 1.8em;
 
     background-color: white;
     border: 1px solid #494949;
@@ -226,7 +228,6 @@ body {
 
 /* C A T E G O R Y */
 .post-bottom h2 {
-    cursor: pointer;
     font-size: 1em;
     margin-top: 2%;
     margin-right: 5%;
@@ -266,7 +267,7 @@ body {
     /* border: 1px solid black; */
     display: flex;
     justify-content: space-between;
-    padding: 3% 5%;
+    padding: 8% 5% 2% 5%;
 }
 
 /* single ratings */

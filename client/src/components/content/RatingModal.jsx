@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+//receives single post as prop, holds id (included rating not up to date)
 export default function RatingModal({ post, setShowRating }) {
     const [error, setError] = useState("");
     const [rating, setRating] = useState({
@@ -16,26 +17,37 @@ export default function RatingModal({ post, setShowRating }) {
             headers: { "Content-Type": "application/json" },
         })
             .then((res) => res.json())
-            .then((post) => {
-                if (post.success === true) {
-                    updateRating(post);
+            .then((ratings) => {
+                console.log(ratings);
+                if (ratings.success === true) {
+                    setRating({
+                        agree: ratings.agree,
+                        disagree: ratings.disagree,
+                        incorrect: ratings.incorrect,
+                        spam: ratings.spam,
+                    });
                 } else {
-                    setError(post.message);
+                    setError(ratings.message);
                 }
             });
     };
 
-    const updateRating = (post) => {
-        setRating({
-            agree: post.agree,
-            disagree: post.disagree,
-            incorrect: post.incorrect,
-            spam: post.spam,
-        });
-    };
-
     useEffect(() => {
-        updateRating(post);
+        fetch(`/rating/${post.id}`)
+            .then((res) => res.json())
+            .then((post) => {
+                if (post) {
+                    console.log(post);
+                    setRating({
+                        agree: post.agree,
+                        disagree: post.disagree,
+                        incorrect: post.incorrect,
+                        spam: post.spam,
+                    });
+                } else {
+                    console.log("failed getting all ratings");
+                }
+            });
     }, []);
 
     return (

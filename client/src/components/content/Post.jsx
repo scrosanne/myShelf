@@ -16,7 +16,9 @@ export default function Post({ post }) {
                     {post.category}
                 </h4>
 
-                <h2 onMouseEnter={() => setShowRating(true)}>%</h2>
+                <h2 onMouseEnter={() => setShowRating(true)}>
+                    <i class="fa-thin fa-comment"></i>
+                </h2>
             </div>
 
             {showRating && (
