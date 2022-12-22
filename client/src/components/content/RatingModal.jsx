@@ -53,22 +53,22 @@ export default function RatingModal({ post, setShowRating }) {
         <div className="rating" onMouseLeave={() => setShowRating(false)}>
             <div>
                 <h4 onClick={() => ratePost("agree")}>agree</h4>
-                <h4>{rating.agree}</h4>
+                <h4 onClick={() => ratePost("agree")}>{rating.agree}</h4>
             </div>
 
             <div>
                 <h4 onClick={() => ratePost("disagree")}>disagree</h4>
-                <h4>{rating.disagree}</h4>
+                <h4 onClick={() => ratePost("agree")}>{rating.disagree}</h4>
             </div>
 
             <div>
                 <h4 onClick={() => ratePost("incorrect")}>incorrect</h4>
-                <h4>{rating.incorrect}</h4>
+                <h4 onClick={() => ratePost("agree")}>{rating.incorrect}</h4>
             </div>
 
             <div>
                 <h4 onClick={() => ratePost("spam")}>spam</h4>
-                <h4>{rating.spam}</h4>
+                <h4 onClick={() => ratePost("agree")}>{rating.spam}</h4>
             </div>
 
             <div className="error-post">
