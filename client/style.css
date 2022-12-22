@@ -10,7 +10,7 @@ body {
 }
 
 .navbar {
-    padding: 20px;
+    padding: 30px;
 
     display: flex;
     justify-content: space-between;
@@ -26,7 +26,6 @@ body {
 
     letter-spacing: 0.33em;
     text-align: left;
-    margin-left: 5%;
 }
 
 .navbar a {
