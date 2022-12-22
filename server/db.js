@@ -47,7 +47,7 @@ function addPost(book_id, category, content) {
 }
 
 function getPostsByBookId(id) {
-    return db.query(`SELECT * FROM posts WHERE book_id = $1`, [id]).then((result) => result.rows);
+    return db.query(`SELECT * FROM posts WHERE book_id = $1 ORDER BY created_at DESC`, [id]).then((result) => result.rows);
 }
 
 // R A T I N G / / / / / / / / / / / / / / / / / / / / / / / / / /
