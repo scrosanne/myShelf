@@ -1,6 +1,6 @@
 # myShelf
 
-### as someone who enjoys not only reading but having a good conversation about it, I created myShelf as some kind of bulletin board, where people can explore thoughts and quotes around their favourite books.
+#### as someone who enjoys not only reading but having a good conversation about it, I created myShelf as some kind of bulletin board, where people can explore thoughts and quotes around their favourite books.
 
 ## features
 * create new book
