@@ -10,5 +10,4 @@ as someone who enjoys not only reading but having a good conversation about it, 
 * rate existing posts
 
 ---
-<img width="1440" alt="Bildschirmfoto 2023-01-02 um 12 59 34" src="https://user-images.githubusercontent.com/105161260/210229425-c8839e38-fdee-49dd-b019-d7301519437a.png">
-<img width="1436" alt="Bildschirmfoto 2023-01-02 um 13 01 20" src="https://user-images.githubusercontent.com/105161260/210229429-5c0ec42a-71db-46ac-a6ab-4f66883aaaac.png">
+<img width="1440" alt="Bildschirmfoto 2023-01-09 um 10 28 20" src="https://user-images.githubusercontent.com/105161260/211277498-e41059c8-5ef4-42f5-9fa2-d9c3b9cb6a06.png">
