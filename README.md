@@ -21,7 +21,7 @@ as someone who enjoys not only reading but having a good conversation about it, 
 this project has two servers running concurrently,
 to run both servers at the same time use:
 
-npm run dev
+`npm run dev
 
 open http://localhost:3000 to view it in the browser.
 
