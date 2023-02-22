@@ -395,6 +395,15 @@ input:focus {
         margin: 10% 0 0 0;
         gap: 1%;
     }
+    .book-form {
+        width: 286px;
+        height: 376px;
+    }
+    .book {
+        width: 286px;
+        height: 376px;
+    }
+
     .navbar {
         flex-direction: column;
     }
@@ -406,13 +415,11 @@ input:focus {
         letter-spacing: 0.1em;
         text-align: left;
     }
-    .book-form {
-        width: 286px;
-        height: 376px;
-    }
-    .book {
-        width: 286px;
-        height: 376px;
+
+    .inside {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 5% 0 0 0;
+        row-gap: 2%;
     }
 }
 
